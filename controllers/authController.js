@@ -1,6 +1,6 @@
 import userModel from "../models/userModel.js";
 import { comparePassword, hashpassword } from "../helper/authHelper.js";
-import Jwt from "jsonwebtoken";
+import JWT from "jsonwebtoken";
 
 export const registerController = async (req, res) => {
   try {
@@ -81,7 +81,7 @@ export const loginController = async (req, res) => {
         .send({ success: false, message: "Invalid Password" });
     }
     //token
-    const token = await Jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
+    const token = await JWT.sign({ _id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "7d",
     });
     res.status(200).send({
@@ -104,3 +104,9 @@ export const loginController = async (req, res) => {
     });
   }
 };
+
+
+// test controller
+export const testController = (req,res) =>{
+  res.send("Protected route")
+}
