@@ -104,7 +104,7 @@ font-family: 'Poppins', sans-serif;
   justify-content: center;
 }
 
-/* policy */
+/* ######################   policy    #######################*/
 .policy{
   display: flex;
   justify-content: center;
@@ -141,4 +141,14 @@ font-family: 'Poppins', sans-serif;
   background-color: #434343 !important;
   color: white;
   padding: 20px 0px;
+}
+
+
+/*  Register Page  */
+.register{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  flex-direction: column;
 }
