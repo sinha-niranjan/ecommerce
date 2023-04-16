@@ -2,23 +2,24 @@ import userModel from "../models/userModel.js";
 import { comparePassword, hashpassword } from "../helper/authHelper.js";
 import JWT from "jsonwebtoken";
 
+
 export const registerController = async (req, res) => {
   try {
     const { name, email, password, phone, address } = req.body;
     if (!name) {
-      return res.send({ error: "Name is Required !" });
+      return res.send({ mesage: "Name is Required !" });
     }
     if (!email) {
-      return res.send({ error: "Email is Required !" });
+      return res.send({ mesage: "Email is Required !" });
     }
     if (!password) {
-      return res.send({ error: "password is Required !" });
+      return res.send({ mesage: "password is Required !" });
     }
     if (!phone) {
-      return res.send({ error: "phone number is Required !" });
+      return res.send({ mesage: "phone number is Required !" });
     }
     if (!address) {
-      return res.send({ error: "address is Required !" });
+      return res.send({ mesage: "address is Required !" });
     }
 
     // check user
@@ -26,7 +27,7 @@ export const registerController = async (req, res) => {
     // existing user
     if (existingUser) {
       return res.status(200).send({
-        success: true,
+        success: false,
         message: "Already register please login",
       });
     }
@@ -42,7 +43,7 @@ export const registerController = async (req, res) => {
     }).save();
     res.status(201).send({
       success: true,
-      message: "user Register Successfully",
+      message: "User Register Successfully",
       user,
     });
   } catch (error) {
@@ -105,8 +106,7 @@ export const loginController = async (req, res) => {
   }
 };
 
-
 // test controller
-export const testController = (req,res) =>{
-  res.send("Protected route")
-}
+export const testController = (req, res) => {
+  res.send("Protected route");
+};

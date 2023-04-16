@@ -7,6 +7,7 @@ import Policy from "./pages/Policy";
 import Register from './pages/Auth/Register'
 
 
+
 function App() {
   return (
     <>
