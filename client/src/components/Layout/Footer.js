@@ -1,13 +1,21 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className='bg-dark text-light p-3'>
-      <h4 className='text-center'>
-       All Right Reserved &copy;  Technifoyt
-      </h4>
-    </div>
-  )
-}
+    <div className=" footer">
+      <h1 className="text-center">All Right Reserved &copy; Technifoyt</h1>
+      <p className="text-center mt-3">
+        <Link to="/about" > About </Link> 
+        |
+        <Link to="/contact" > Contact </Link> 
+        |
+        <Link to="/privacy" > Privacty Policy </Link> 
+        
 
-export default Footer
+      </p> 
+    </div>
+  );
+};
+
+export default Footer;
