@@ -103,3 +103,42 @@ font-family: 'Poppins', sans-serif;
   align-items: center;
   justify-content: center;
 }
+
+/* policy */
+.policy{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 50px;
+  font-size: 20px;
+}
+
+
+/* ==================== */
+.product-link {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.cat-btn {
+  padding: 40px 0px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.cat-btn:hover {
+  background-color: #434343;
+  color: white;
+}
+/* ================
+====dashboard
+=================== */
+
+.dashboard {
+  margin-top: 100px !important;
+}
+
+.dashboard-menu h4 {
+  background-color: #434343 !important;
+  color: white;
+  padding: 20px 0px;
+}
