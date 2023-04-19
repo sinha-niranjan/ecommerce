@@ -36,6 +36,6 @@ router.get("/get-category", categoryController);
 router.get("/single-category/:slug", singleCategoryController);
 
 // delete Catrgory
-router.get('/delete-category/:id',requireSignIn,isAdmin,deleteCategoryController)
+router.delete('/delete-category/:id',requireSignIn,isAdmin,deleteCategoryController)
 
 export default router;
