@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./../components/Layout/Layout";
+import Layout from "../components/Layout/Layout";
 import { useCart } from "../context/cart";
 import { useAuth } from "../context/auth";
 import { useNavigate } from "react-router-dom";
@@ -9,14 +9,30 @@ const CartPage = () => {
   const [auth, setAuth] = useAuth();
   const navigate = useNavigate();
 
+  // total price
+  const totalPrice = () => {
+    try {
+      let total = 0;
+      cart?.map((item) => {
+        total = total + item.price;
+      });
+      return total.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   //delete item
   const removeCartItem = (pid) => {
     try {
-        let myCart = [...cart]
-        let index = myCart.findIndex(item => item._id === pid)
-        myCart.splice(index,1)
-        setCart(myCart)
-        localStorage.setItem('cart',JSON.stringify(myCart))
+      let myCart = [...cart];
+      let index = myCart.findIndex((item) => item._id === pid);
+      myCart.splice(index, 1);
+      setCart(myCart);
+      localStorage.setItem("cart", JSON.stringify(myCart));
     } catch (error) {
       console.log(error);
     }
@@ -65,7 +81,12 @@ const CartPage = () => {
               </div>
             ))}
           </div>
-          <div className="col-md-4">Checkout | payment </div>
+          <div className="col-md-4 text-center">
+            <h2>Cart Summary</h2>
+            <p>Total | Checkout | Payment</p>
+            <hr />
+            <h4>Total : {totalPrice()} </h4>
+          </div>
         </div>
       </div>
     </Layout>
