@@ -5,11 +5,11 @@ const orderSchema = new mongoose.Schema(
     products: [
       {
         type: mongoose.ObjectId,
-        ref: "products",
+        ref: "Products",
       },
     ],
     payment: {},
-    buyers: {
+    buyer: {
       type: mongoose.ObjectId,
       ref: "users",
     },
