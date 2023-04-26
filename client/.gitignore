@@ -8,7 +8,8 @@
 # testing
 /coverage
 
-# production
+# env
+/env
 
 
 # misc
