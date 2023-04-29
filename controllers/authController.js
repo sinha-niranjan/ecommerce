@@ -232,7 +232,7 @@ export const getAllOrdersController = async (req, res) => {
 export const orderStatusController = async (req, res) => {
   try {
     const { orderId } = req.params;
-    const { status } = req.params;
+    const { status } = req.body;
     const orders = await orderModel.findByIdAndUpdate(
       orderId,
       { status },

@@ -37,6 +37,7 @@ const AdminOrders = () => {
       const { data } = await axios.put(`${process.env.REACT_APP_API}/api/v1/auth/order-status/${orderId}`, {
         status: value,
       });
+      
       getOrders();
     } catch (error) {
       console.log(error);
